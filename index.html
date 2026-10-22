@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<script>document.documentElement.classList.add('js');</script>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<!-- Seguridad: solo se cargan recursos de este sitio y de los servicios listados
+     (Google Fonts). El video del inicio se sirve desde assets/.
+     Si agregas un servicio externo nuevo (ej. analítica o un mapa embebido), súmalo aquí. -->
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'sha256-/x7W7R75k8Roq0WaVRQX9blP4OufE5xbAdzklGxsgpw='; style-src 'self' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; img-src 'self' data:; media-src 'self'; frame-src 'none'; connect-src 'self'; object-src 'none'; base-uri 'self'; form-action 'self' mailto:; upgrade-insecure-requests">
+<meta name="referrer" content="strict-origin-when-cross-origin">
+<title>Delarrecife — Comunicación y desarrollo web para pymes en Puente Alto</title>
+<meta name="description" content="Saca a flote tu negocio: comunicación, desarrollo web y e-commerce para pymes y emprendedores de Puente Alto y la Región Metropolitana. Delarrecife, por Joaquín Ramón Torres Osorio.">
+<meta name="theme-color" content="#0a1628">
+<meta name="author" content="Joaquín Ramón Torres Osorio">
+<link rel="canonical" href="https://joaquintorresperiodista.github.io/delarrecife/">
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='22' fill='%230a1628'/%3E%3Ctext x='50' y='70' font-family='Georgia,serif' font-size='58' fill='%232C8DA3' text-anchor='middle'%3ED%3C/text%3E%3C/svg%3E">
+
+<!-- Vista previa al compartir el link (WhatsApp, LinkedIn, Facebook, X, etc.) -->
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Delarrecife">
+<meta property="og:title" content="Delarrecife — Saca a flote tu negocio">
+<meta property="og:description" content="Asegura la presencia digital de tu empresa o emprendimiento: comunicación, sitio web y ventas online.">
+<meta property="og:image" content="https://joaquintorresperiodista.github.io/delarrecife/assets/og-image.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Delarrecife — Comunicación y soluciones digitales">
+<meta property="og:url" content="https://joaquintorresperiodista.github.io/delarrecife/">
+<meta property="og:locale" content="es_CL">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Delarrecife — Saca a flote tu negocio">
+<meta name="twitter:description" content="Asegura la presencia digital de tu empresa o emprendimiento: comunicación, sitio web y ventas online.">
+<meta name="twitter:image" content="https://joaquintorresperiodista.github.io/delarrecife/assets/og-image.jpg">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Inter:wght@400;500;600&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "ProfessionalService",
+      "@id": "https://joaquintorresperiodista.github.io/delarrecife/#negocio",
+      "name": "Delarrecife",
+      "description": "Comunicación, desarrollo web y optimización de e-commerce para pymes y emprendedores.",
+      "url": "https://joaquintorresperiodista.github.io/delarrecife/",
+      "image": "https://joaquintorresperiodista.github.io/delarrecife/assets/og-image.jpg",
+      "email": "delarrecife@gmail.com",
+      "founder": { "@id": "https://joaquintorresperiodista.github.io/delarrecife/#joaquin" },
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Puente Alto",
+        "addressRegion": "Región Metropolitana",
+        "addressCountry": "CL"
+      },
+      "areaServed": [
+        { "@type": "City", "name": "Puente Alto" },
+        { "@type": "AdministrativeArea", "name": "Región Metropolitana de Santiago" }
+      ],
+      "knowsAbout": ["Comunicación estratégica", "Identidad visual", "Gestión de redes sociales", "Desarrollo web", "SEO", "E-commerce"]
+    },
+    {
+      "@type": "Person",
+      "@id": "https://joaquintorresperiodista.github.io/delarrecife/#joaquin",
+      "name": "Joaquín Ramón Torres Osorio",
+      "jobTitle": "Periodista",
+      "url": "https://joaquintorresperiodista.github.io/delarrecife/",
+      "email": "delarrecife@gmail.com",
+      "worksFor": { "@id": "https://joaquintorresperiodista.github.io/delarrecife/#negocio" },
+      "alumniOf": { "@type": "CollegeOrUniversity", "name": "Universidad Diego Portales" },
+      "sameAs": ["https://github.com/joaquintorresperiodista"]
+    }
+  ]
+}
+</script>
+
+</head>
+<body>
+<a class="skip-link" href="#contenido">Saltar al contenido</a>
+
+<!-- Paleta de comandos: se abre con Ctrl+K / Cmd+K -->
+<div class="cmdk-overlay" id="cmdk-overlay">
+  <div class="cmdk-panel" role="dialog" aria-modal="true" aria-label="Buscador rápido">
+    <input type="text" id="cmdk-input" class="cmdk-input" placeholder="Buscar… (Proyectos, Soluciones, Contacto)" autocomplete="off" aria-label="Buscar sección">
+    <ul class="cmdk-list">
+      <li><a class="cmdk-item" href="#top">Inicio</a></li>
+      <li><a class="cmdk-item" href="#proyectos">Proyectos</a></li>
+      <li><a class="cmdk-item" href="#soluciones">Soluciones</a></li>
+      <li><a class="cmdk-item" href="#contacto">Contacto</a></li>
+      <li><a class="cmdk-item" href="https://github.com/joaquintorresperiodista/delarrecife" target="_blank" rel="noopener">GitHub <span class="hint">↗<span class="sr-only"> (abre en otra pestaña)</span></span></a></li>
+      <li><span class="cmdk-item" aria-disabled="true">LinkedIn <span class="hint">próximamente</span></span></li>
+      <li><span class="cmdk-item" aria-disabled="true">YouTube <span class="hint">próximamente</span></span></li>
+    </ul>
+    <div class="cmdk-hint">↑ ↓ para moverte · Enter para abrir · Esc para cerrar</div>
+  </div>
+</div>
+
+<header class="site-nav" id="top">
+  <nav class="wrap nav-inner" aria-label="Principal">
+
+    <a href="#top" class="nav-brand">Delarrecife</a>
+
+    <div class="nav-links" id="nav-links">
+      <a href="#proyectos" class="nav-link">Proyectos</a>
+      <a href="#soluciones" class="nav-link">Soluciones</a>
+      <a href="#contacto" class="nav-link">Contacto</a>
+      <a href="#contacto" class="btn-brand-solid nav-cta">Hablemos</a>
+    </div>
+
+    <button type="button" class="nav-toggle" aria-expanded="false" aria-controls="nav-links" aria-label="Abrir menú">
+      <span class="nav-toggle-bar"></span>
+      <span class="nav-toggle-bar"></span>
+      <span class="nav-toggle-bar"></span>
+    </button>
+
+  </nav>
+</header>
+
+<main id="contenido" tabindex="-1">
+
+  <!-- ============ HERO CON VIDEO ============
+       Video: assets/saca-a-flote.mp4 (1280×720, 6,3 MB) y una versión liviana
+       para celular, saca-a-flote-movil.mp4 (854×480, 2,5 MB). Sin audio.
+       Si el video no carga, se ve el póster y, detrás, el degradado azul de marca.
+       Si la persona pidió "reducir movimiento" en su sistema, script.js lo pausa. -->
+  <section class="hero-video" aria-labelledby="hero-titulo">
+    <video class="hero-video-media" autoplay muted loop playsinline preload="metadata" poster="assets/saca-a-flote-poster.jpg" aria-hidden="true" tabindex="-1">
+      <source src="assets/saca-a-flote-movil.mp4" type="video/mp4" media="(max-width: 760px)">
+      <source src="assets/saca-a-flote.mp4" type="video/mp4">
+    </video>
+    <div class="hero-video-content">
+      <h1 id="hero-titulo" class="hero-video-title">Saca a flote tu negocio</h1>
+      <p class="hero-video-lead">Asegura la presencia digital de tu empresa o emprendimiento.</p>
+    </div>
+    <button type="button" class="hero-video-toggle" hidden>Pausar video</button>
+  </section>
+
+  <!-- ============ PROYECTOS ============ -->
+  <section class="wide-section" id="proyectos" aria-labelledby="proyectos-titulo">
+    <span class="wide-badge">Trabajo reciente</span>
+    <h2 class="wide-title" id="proyectos-titulo">Algunos proyectos</h2>
+    <div class="projects-wide-grid">
+      <article class="project-card-wide">
+        <div class="project-thumb">
+          <picture>
+            <source type="image/webp" srcset="assets/alpace-project-800.webp 800w, assets/alpace-project.webp 1200w" sizes="(max-width: 700px) 100vw, 410px">
+            <img src="assets/alpace-project.jpg" alt="Fachada del Centro Terapéutico Alpace con su identidad visual" loading="lazy" decoding="async" width="1200" height="800">
+          </picture>
+        </div>
+        <span class="tag-label">Identidad visual y redes</span>
+        <h3>Centro Terapéutico Alpace</h3>
+        <p>Identidad visual desde cero (logo, colores, línea gráfica en Canva) y gestión de contenido — la cuenta de Instagram creció en más de 100 seguidores nuevos.</p>
+      </article>
+      <article class="project-card-wide">
+        <div class="project-thumb alt">
+          <picture>
+            <source type="image/webp" srcset="assets/incluya-project-800.webp 800w, assets/incluya-project.webp 1200w" sizes="(max-width: 700px) 100vw, 410px">
+            <img src="assets/incluya-project.jpg" alt="Logo de IncluYa sobre una fotografía de cuidado a un adulto mayor" loading="lazy" decoding="async" width="1200" height="800">
+          </picture>
+        </div>
+        <span class="tag-label">Emprendimiento social</span>
+        <h3>IncluYa</h3>
+        <p>Proyecto propio de inserción laboral para personas cuidadoras. Finalista en el Concurso Despega USACH 2025.</p>
+      </article>
+      <article class="project-card-wide">
+        <div class="project-thumb">
+          <picture>
+            <source type="image/webp" srcset="assets/huerta-entre-cerros-800.webp 800w, assets/huerta-entre-cerros.webp 1200w" sizes="(max-width: 700px) 100vw, 410px">
+            <img src="assets/huerta-entre-cerros.jpg" alt="Logo de Huerta Entre Cerros sobre una fotografía de manos sosteniendo un brote en tierra" loading="lazy" decoding="async" width="1200" height="800">
+          </picture>
+        </div>
+        <span class="tag-label">Desarrollo web</span>
+        <h3>Huerta Entre Cerros</h3>
+        <!-- Texto propuesto 2026-10-22: revisar. Si tienes un resultado medible
+             (velocidad, visitas, consultas), agrégalo como en Alpace. -->
+        <p>Sitio web desarrollado desde cero en HTML, CSS y JavaScript: diseño responsivo para celular y computador, SEO para aparecer en Google, buenas prácticas de seguridad y carga rápida.</p>
+      </article>
+    </div>
+  </section>
+
+  <!-- ============ SOLUCIONES ============ -->
+  <section class="soluciones-intro" id="soluciones" aria-labelledby="soluciones-titulo">
+    <span class="wide-badge">Soluciones</span>
+    <h2 id="soluciones-titulo" class="soluciones-title">Para que tu negocio se vea, se cuente y se venda bien en internet.</h2>
+    <p class="lead">Comunicación, sitios web y tiendas online para pymes y emprendedores de Puente Alto y la Región Metropolitana — con acompañamiento cercano, sin letra chica.</p>
+    <div class="intro-note">
+      <p>Tienes un negocio que funciona, pero tu presencia digital no lo demuestra: un Instagram sin orden, un sitio que nunca hiciste, o uno que no dice lo que realmente ofreces.</p>
+      <p class="pricing-note">Pago por proyecto para entregables únicos (sitio, identidad visual, tienda online) — planes mensuales para lo recurrente (redes, mantención, contenido).</p>
+    </div>
+  </section>
+
+  <!-- ============ 01 · COMUNICACIONES ============ -->
+  <section class="service-detail">
+    <div class="service-detail-content">
+      <span class="wide-badge">01 / Comunicaciones</span>
+      <h3>Comunicaciones</h3>
+      <p>Definimos qué necesitas contar y a quién, antes de diseñar cualquier pieza: identidad visual, contenido para redes y newsletters — para que tu negocio se recuerde, no solo para "estar activo".</p>
+      <div class="deliverables-label">Entregables clave</div>
+      <ul class="deliverables-list">
+        <li>Identidad visual (logo, colores, línea gráfica)</li>
+        <li>Plan de medios y calendario de contenido</li>
+        <li>Redacción de newsletters</li>
+        <li>Diseño de contenido y reels para redes sociales</li>
+        <li>Apoyo en vocerías y comunicación de marca</li>
+      </ul>
+    </div>
+    <!-- PENDIENTE imagen: reemplaza el <svg> de abajo por
+         <img class="service-photo" src="assets/NOMBRE.jpg" alt="Describe la imagen" width="1200" height="800" loading="lazy" decoding="async"> -->
+    <svg class="service-artboard" viewBox="0 0 480 360" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false">
+      <ellipse cx="240" cy="180" rx="130" ry="130" fill="#2C8DA3" opacity="0.12"/>
+      <rect x="130" y="70" width="180" height="180" rx="18" transform="rotate(8 220 160)" fill="rgba(11,89,115,0.12)" stroke="#0B5973" stroke-opacity="0.5"/>
+      <rect x="170" y="100" width="180" height="180" rx="18" transform="rotate(-6 260 190)" fill="none" stroke="#2C8DA3" stroke-opacity="0.6"/>
+      <line x1="120" y1="220" x2="300" y2="300" stroke="#D8C9A8" stroke-opacity="0.5" stroke-width="1.5"/>
+    </svg>
+  </section>
+
+  <!-- ============ 02 · DESARROLLO WEB ============ -->
+  <section class="service-detail reverse">
+    <div class="service-detail-content">
+      <span class="wide-badge">02 / Desarrollo</span>
+      <h3>Desarrollo web</h3>
+      <p>Un sitio o portafolio propio, escrito a mano, sin plantillas genéricas — para que quien te busque en Google encuentre información clara y actualizada.</p>
+      <div class="deliverables-label">Entregables clave</div>
+      <ul class="deliverables-list">
+        <li>Sitio web o portafolio profesional a medida</li>
+        <li>Diseño responsive (se ve bien en celular y computador)</li>
+        <li>Estructura pensada para SEO básico</li>
+        <li>Contenido y textos coherentes con tu marca</li>
+        <li>Capacitación para que puedas actualizarlo tú mismo</li>
+      </ul>
+    </div>
+    <!-- PENDIENTE imagen: reemplaza el <svg> de abajo por
+         <img class="service-photo" src="assets/NOMBRE.jpg" alt="Describe la imagen" width="1200" height="800" loading="lazy" decoding="async"> -->
+    <svg class="service-artboard" viewBox="0 0 480 360" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false">
+      <ellipse cx="240" cy="170" rx="110" ry="110" fill="#2C8DA3" opacity="0.12"/>
+      <line x1="90" y1="130" x2="390" y2="130" stroke="#B8DDE3" stroke-opacity="0.25"/>
+      <line x1="90" y1="190" x2="390" y2="190" stroke="#B8DDE3" stroke-opacity="0.25"/>
+      <line x1="90" y1="250" x2="390" y2="250" stroke="#B8DDE3" stroke-opacity="0.25"/>
+      <circle cx="290" cy="180" r="55" fill="none" stroke="#2C8DA3" stroke-opacity="0.6"/>
+      <rect x="150" y="100" width="180" height="180" rx="18" fill="none" stroke="#0B5973" stroke-opacity="0.5"/>
+    </svg>
+  </section>
+
+  <!-- ============ 03 · OPTIMIZACIÓN DE E-COMMERCE ============ -->
+  <section class="service-detail">
+    <div class="service-detail-content">
+      <span class="wide-badge">03 / Ventas online</span>
+      <h3>Optimización de E-commerce</h3>
+      <p>Si ya vendes por WhatsApp, Instagram o tienda online, ordenamos ese canal — catálogo, fichas de producto, proceso de compra — para que quien llega termine comprando.</p>
+      <div class="deliverables-label">Entregables clave</div>
+      <ul class="deliverables-list">
+        <li>Organización y fichas de producto</li>
+        <li>Configuración o mejora de tienda online</li>
+        <li>Revisión del proceso de compra (checkout)</li>
+        <li>Preparación de catálogo para redes y marketplaces</li>
+        <li>Recomendaciones de canales de venta según tu negocio</li>
+      </ul>
+    </div>
+    <!-- PENDIENTE imagen: reemplaza el <svg> de abajo por
+         <img class="service-photo" src="assets/NOMBRE.jpg" alt="Describe la imagen" width="1200" height="800" loading="lazy" decoding="async"> -->
+    <svg class="service-artboard" viewBox="0 0 480 360" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false">
+      <rect x="140" y="120" width="200" height="140" rx="16" fill="rgba(11,89,115,0.12)" stroke="#0B5973" stroke-opacity="0.5"/>
+      <line x1="170" y1="150" x2="170" y2="230" stroke="#B8DDE3" stroke-opacity="0.35"/>
+      <line x1="210" y1="150" x2="210" y2="210" stroke="#B8DDE3" stroke-opacity="0.35"/>
+      <line x1="250" y1="150" x2="250" y2="240" stroke="#B8DDE3" stroke-opacity="0.35"/>
+      <line x1="290" y1="150" x2="290" y2="195" stroke="#B8DDE3" stroke-opacity="0.35"/>
+      <circle cx="330" cy="140" r="16" fill="#2C8DA3" opacity="0.7"/>
+    </svg>
+  </section>
+
+  <!-- ============ CONTACTO ============ -->
+  <section class="wide-section" id="contacto" aria-labelledby="contacto-titulo">
+    <div class="contact-panel">
+      <span class="wide-badge">Hablemos</span>
+      <h2 id="contacto-titulo">¿Partimos con un diagnóstico?</h2>
+      <p>Cuéntame qué tienes hoy y qué te gustaría lograr. La primera conversación de diagnóstico no tiene costo.</p>
+    </div>
+  <div class="contact-split">
+
+    <!-- ============ FORMULARIO ============ -->
+    <div class="contact-form-side">
+      <h3 id="form-titulo">Escríbeme</h3>
+      <!-- Sin servidor: script.js arma un correo con estos datos. Si JS no carga,
+           el action="mailto:" hace de respaldo. Para recibir mensajes sin depender
+           del programa de correo del visitante, ver "Formspree" en el informe. -->
+      <form id="contact-form" action="mailto:delarrecife@gmail.com" method="post" enctype="text/plain">
+        <div class="form-field">
+          <label for="nombre">Nombre</label>
+          <input type="text" id="nombre" name="nombre" autocomplete="name" required maxlength="80" placeholder="Tu nombre">
+        </div>
+        <div class="form-field">
+          <label for="correo">Correo electrónico</label>
+          <input type="email" id="correo" name="correo" autocomplete="email" required maxlength="120" placeholder="nombre@correo.cl">
+        </div>
+        <div class="form-field">
+          <label for="negocio">Negocio u organización <span class="optional">(opcional)</span></label>
+          <input type="text" id="negocio" name="negocio" autocomplete="organization" maxlength="120" placeholder="Ej. Verdulería Los Dominicos">
+        </div>
+        <div class="form-field">
+          <label for="mensaje">¿En qué te puedo ayudar?</label>
+          <textarea id="mensaje" name="mensaje" required minlength="10" maxlength="1500" placeholder="Cuéntame brevemente tu idea o necesidad"></textarea>
+        </div>
+        <div class="form-trap" aria-hidden="true">
+          <label for="sitio">No completar este campo</label>
+          <input type="text" id="sitio" name="sitio" tabindex="-1" autocomplete="off">
+        </div>
+        <button type="submit" class="form-submit">Preparar correo</button>
+        <p class="form-hint">Al enviar se abrirá tu programa de correo con el mensaje listo. No guardo tus datos en este sitio.</p>
+        <p class="form-status" id="form-status" role="status" aria-live="polite"></p>
+      </form>
+    </div>
+
+    <!-- ============ DATOS DE CONTACTO ============ -->
+    <div class="contact-info-side">
+      <div class="info-block">
+        <h3 class="sr-only">Datos de contacto</h3>
+        <div class="info-item">
+          <span class="label">Correo</span>
+          <span class="value"><a href="mailto:delarrecife@gmail.com">delarrecife@gmail.com</a></span>
+        </div>
+        <div class="info-item">
+          <span class="label">Ubicación</span>
+          <span class="value">Puente Alto, Región Metropolitana — atención presencial y remota</span>
+        </div>
+      </div>
+
+      <div class="info-block">
+        <h4>Redes</h4>
+        <div class="social-links-row">
+          <a class="social-card" href="https://github.com/joaquintorresperiodista" target="_blank" rel="noopener">GitHub<span class="sr-only"> (abre en otra pestaña)</span></a>
+          <span class="social-card" aria-disabled="true">LinkedIn · próximamente</span>
+          <span class="social-card" aria-disabled="true">WhatsApp · próximamente</span>
+        </div>
+      </div>
+
+      <div class="concept-note">
+        <h4>¿Por qué Delarrecife?</h4>
+        <p>Porque lo importante de un arrecife está bajo la superficie. Antes de proponer una solución, entendemos qué necesita realmente tu negocio.</p>
+      </div>
+    </div>
+
+  </div>
+  </section>
+
+</main>
+
+<footer>
+  <hr class="depth">
+  <p class="tagline">Historias con profundidad.</p>
+  <hr class="depth">
+  <div class="foot-row">
+    <div class="colophon">Actualizado octubre 2026 — Puente Alto, Chile</div>
+    <a class="back-top" href="#top">Volver arriba ↑</a>
+  </div>
+
+  <div class="colophon-block">
+    <span class="mark"></span>
+    <p>Compuesto en Space Grotesk, Inter y DM Serif Display.</p>
+    <p>Azul Abisal, Azul Arrecife, Azul Agua, Celeste Bruma y Arena.</p>
+    <p>Delarrecife — Joaquín Torres Osorio, Puente Alto, Chile.</p>
+  </div>
+
+  <p class="made-by">Sitio construido a mano con HTML, CSS y JavaScript — sin plantillas ni page builders. Código en <a href="https://github.com/joaquintorresperiodista/delarrecife" target="_blank" rel="noopener">GitHub<span class="sr-only"> (abre en otra pestaña)</span></a>.</p>
+</footer>
+
+
+<script src="script.js"></script>
+</body>
+</html>
