@@ -1,0 +1,24 @@
+# Delarrecife
+
+> Consultora digital de Joaquín Ramón Torres Osorio en Puente Alto, Región Metropolitana de Santiago, Chile. Ayuda a pymes y emprendedores a "sacar a flote su negocio": desarrollo web, identidad visual, redes sociales y e-commerce.
+
+## Servicios
+- Desarrollo web a medida: sitios responsivos, rápidos, seguros y optimizados para SEO.
+- Identidad visual y branding: logo, colores y línea gráfica.
+- Gestión de redes sociales y contenido.
+- Optimización de e-commerce: catálogo, fichas de producto y proceso de compra.
+- Primer diagnóstico de presencia digital sin costo.
+
+## Proyectos
+- Huerta Entre Cerros / Consultora Agroecológica: desarrollo del sitio web (diseño responsivo, SEO, seguridad, rendimiento). https://consultoragroecologica.github.io/kevinquinteros/
+- Centro Terapéutico Alpace: identidad visual y estrategia de Instagram (+100 seguidores nuevos). https://alpace.cl
+- IncluYa: emprendimiento social de inserción laboral para personas cuidadoras, finalista del Concurso Despega USACH 2025.
+
+## Fundador
+Joaquín Ramón Torres Osorio, periodista de la Universidad Diego Portales, con experiencia en redacción SEO y medios digitales.
+
+## Contacto
+- Sitio: https://joaquintorresperiodista.github.io/delarrecife/
+- WhatsApp: +56 9 8867 0277 (https://wa.me/56988670277)
+- Correo: delarrecife@gmail.com
+- Formulario: https://joaquintorresperiodista.github.io/delarrecife/#contacto

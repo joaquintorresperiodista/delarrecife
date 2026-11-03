@@ -1,11 +1,9 @@
 document.addEventListener("DOMContentLoaded", () => {
 
   /* =========================
-     FORMULARIO DE CONTACTO (contacto.html)
-     Sin backend propio: arma un mailto: con los datos del
-     formulario y abre el programa de correo del usuario.
-     Si JavaScript no carga, el <form> igual funciona con su
-     action="mailto:" (versión más básica, pero no se pierde).
+     FORMULARIO DE CONTACTO → Formspree → delarrecife@gmail.com
+     Con JS se envía sin recargar y muestra el resultado en la misma
+     página. Sin JS, el <form> hace un POST normal a Formspree.
      ========================= */
 
   const contactForm = document.getElementById("contact-form");
@@ -13,43 +11,51 @@ document.addEventListener("DOMContentLoaded", () => {
   if (contactForm) {
 
     const formStatus = document.getElementById("form-status");
+    const submitButton = contactForm.querySelector('[type="submit"]');
+    const submitLabel = submitButton.textContent;
+    const fallback =
+      'Escríbeme por <a href="https://wa.me/56988670277" target="_blank" rel="noopener">WhatsApp</a> ' +
+      'o a <a href="mailto:delarrecife@gmail.com">delarrecife@gmail.com</a>.';
 
-    contactForm.addEventListener("submit", (event) => {
+    function showStatus(type, html) {
+      // Textos fijos escritos aquí (no vienen del usuario): innerHTML es seguro.
+      formStatus.className = `form-status is-${type}`;
+      formStatus.innerHTML = html;
+    }
+
+    contactForm.addEventListener("submit", async (event) => {
 
       event.preventDefault();
 
-      // Trampa anti-spam: un bot rellena todos los campos, una persona no ve este.
-      if (contactForm.sitio && contactForm.sitio.value) return;
+      // Trampa anti-spam: si un bot llenó el campo oculto, no se envía nada.
+      if (contactForm.elements._gotcha.value) return;
 
       if (!contactForm.checkValidity()) {
         contactForm.reportValidity();
         return;
       }
 
-      const nombre = contactForm.nombre.value.trim();
-      const correo = contactForm.correo.value.trim();
-      const negocio = contactForm.negocio.value.trim();
-      const mensaje = contactForm.mensaje.value.trim();
+      submitButton.disabled = true;
+      submitButton.textContent = "Enviando…";
 
-      const cuerpo =
-        `Nombre: ${nombre}\n` +
-        `Correo: ${correo}\n` +
-        (negocio ? `Negocio: ${negocio}\n` : "") +
-        `\nMensaje:\n${mensaje}`;
+      try {
+        const response = await fetch(contactForm.action, {
+          method: "POST",
+          body: new FormData(contactForm),
+          headers: { Accept: "application/json" }
+        });
 
-      const asunto = `Contacto desde el sitio web — ${nombre}`;
+        if (!response.ok) throw new Error(`Formspree respondió ${response.status}`);
 
-      window.location.href =
-        `mailto:delarrecife@gmail.com?subject=${encodeURIComponent(asunto)}&body=${encodeURIComponent(cuerpo)}`;
+        contactForm.reset();
+        showStatus("ok", "¡Gracias! Recibí tu mensaje y te responderé pronto.");
 
-      // El navegador no avisa si el mailto: falló (ej. sin programa de correo
-      // configurado), así que siempre dejamos la alternativa a la vista.
-      // Texto fijo (no viene del usuario), por eso innerHTML es seguro acá.
-      if (formStatus) {
-        formStatus.innerHTML =
-          "Se abrió tu programa de correo con el mensaje listo para enviar. " +
-          "Si no se abrió, escríbeme directo a " +
-          '<a href="mailto:delarrecife@gmail.com">delarrecife@gmail.com</a>.';
+      } catch (error) {
+        console.error(error);
+        showStatus("error", "No se pudo enviar el mensaje. " + fallback);
+      } finally {
+        submitButton.disabled = false;
+        submitButton.textContent = submitLabel;
       }
 
     });
