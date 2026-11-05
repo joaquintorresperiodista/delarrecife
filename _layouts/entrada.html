@@ -1,0 +1,69 @@
+---
+layout: default
+---
+{%- comment -%} PLANTILLA DE CADA ENTRADA DEL BLOG {%- endcomment -%}
+{%- assign cat = site.data.categorias | where: "clave", page.categoria | first -%}
+{%- assign palabras = content | number_of_words -%}
+{%- assign minutos = palabras | divided_by: 200 | at_least: 1 -%}
+<article class="post" aria-labelledby="post-titulo">
+
+  <header class="post-header">
+    <nav class="post-breadcrumb" aria-label="Ruta de navegación">
+      <a href="{{ '/' | relative_url }}">Inicio</a> <span aria-hidden="true">/</span>
+      <a href="{{ '/blog/' | relative_url }}">Blog</a>
+      {%- if cat %} <span aria-hidden="true">/</span> <span>{{ cat.nombre }}</span>{% endif %}
+    </nav>
+    <h1 class="post-title" id="post-titulo">{{ page.title }}</h1>
+    {%- if page.description %}
+    <p class="post-lead">{{ page.description }}</p>
+    {%- endif %}
+    <p class="post-meta">
+      Por <span class="post-author">Joaquín Torres</span>
+      <span aria-hidden="true">·</span> {% include fecha.html fecha=page.date %}
+      <span aria-hidden="true">·</span> {{ minutos }} min de lectura
+    </p>
+  </header>
+
+  {%- if page.imagen %}
+  <figure class="post-cover">
+    <img src="{{ page.imagen | relative_url }}" alt="{{ page.imagen_alt | escape }}" decoding="async" fetchpriority="high"{% if page.imagen_ancho %} width="{{ page.imagen_ancho }}" height="{{ page.imagen_alto }}"{% endif %}>
+    {%- if page.imagen_credito %}<figcaption>{{ page.imagen_credito }}</figcaption>{% endif %}
+  </figure>
+  {%- endif %}
+
+  <div class="post-body">
+{{ content }}
+  </div>
+
+  <aside class="post-cta" aria-labelledby="post-cta-titulo">
+    <h2 id="post-cta-titulo">¿Quieres aplicar esto en tu negocio?</h2>
+    <p>Conversemos. El primer diagnóstico de tu presencia digital es sin costo.</p>
+    <div class="hero-cta">
+      <a href="{{ '/#contacto' | relative_url }}" class="btn-brand-solid">Hablemos</a>
+      <a href="https://wa.me/56988670277?text=Hola%20Joaqu%C3%ADn%2C%20le%C3%AD%20tu%20blog%20y%20quiero%20sacar%20a%20flote%20mi%20negocio" class="btn-brand-outline" target="_blank" rel="noopener">WhatsApp<span class="sr-only"> (abre en otra pestaña)</span></a>
+    </div>
+  </aside>
+
+  <footer class="post-author-box">
+    <p><strong>Joaquín Torres</strong> es periodista de la Universidad Diego Portales y fundador de Delarrecife, consultora digital para pymes y emprendedores de Puente Alto y Santiago.</p>
+  </footer>
+
+</article>
+
+{%- assign relacionadas = site.posts | where: "categoria", page.categoria | where_exp: "p", "p.url != page.url" -%}
+{%- if relacionadas.size < 3 -%}
+  {%- assign otras = site.posts | where_exp: "p", "p.url != page.url" | where_exp: "p", "p.categoria != page.categoria" -%}
+  {%- assign relacionadas = relacionadas | concat: otras -%}
+{%- endif -%}
+{%- if relacionadas.size > 0 %}
+<section class="wide-section post-related" aria-labelledby="relacionadas-titulo">
+  <h2 class="wide-title" id="relacionadas-titulo">Sigue leyendo</h2>
+  <div class="posts-grid">
+    {%- for post in relacionadas limit: 3 %}
+    {% include tarjeta-entrada.html post=post %}
+    {%- endfor %}
+  </div>
+</section>
+{%- endif %}
+
+<p class="post-back"><a href="{{ '/blog/' | relative_url }}">← Volver al blog</a></p>

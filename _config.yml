@@ -1,0 +1,42 @@
+# =========================================================
+# Configuración de Jekyll (GitHub Pages lo construye solo al publicar en main).
+# La portada (index.html) y la 404 siguen siendo HTML a mano: Jekyll solo
+# las copia tal cual. El blog sí usa plantillas: _layouts/ y _includes/.
+# =========================================================
+title: Delarrecife
+description: Consultora digital para pymes y emprendedores de Puente Alto y Santiago.
+lang: es-CL
+locale: es_CL
+author: Joaquín Ramón Torres Osorio
+url: "https://joaquintorresperiodista.github.io"
+baseurl: "/delarrecife"
+timezone: America/Santiago
+
+# Cada entrada queda en /blog/nombre-del-archivo/ (sin la fecha en la URL).
+permalink: /blog/:title/
+
+markdown: kramdown
+kramdown:
+  input: GFM
+  auto_ids: true
+
+plugins:
+  - jekyll-feed
+
+# RSS del blog: /blog/feed.xml
+feed:
+  path: blog/feed.xml
+
+defaults:
+  - scope:
+      path: ""
+      type: posts
+    values:
+      layout: entrada
+
+exclude:
+  - COMO-ESCRIBIR-UNA-ENTRADA.md
+  - README.md
+  - Gemfile
+  - Gemfile.lock
+  - "*.mp4.original"

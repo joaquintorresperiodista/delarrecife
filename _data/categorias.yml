@@ -1,0 +1,11 @@
+# Categorías del blog. En cada entrada se usa la "clave" (ej. categoria: desarrollo-web).
+# Para sumar una categoría nueva, agrega un bloque aquí con la misma forma.
+- clave: desarrollo-web
+  nombre: Desarrollo web
+  descripcion: Sitios web, SEO, velocidad y seguridad para pymes.
+- clave: comunicacion
+  nombre: Comunicación y redes
+  descripcion: Marca, contenido y redes sociales que conectan con tus clientes.
+- clave: ecommerce
+  nombre: E-commerce
+  descripcion: Tiendas online, catálogo y proceso de compra.

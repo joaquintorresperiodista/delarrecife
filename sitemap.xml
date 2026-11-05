@@ -1,7 +1,21 @@
+---
+layout: null
+---
 <?xml version="1.0" encoding="UTF-8"?>
+<!-- Se genera solo: cada entrada nueva del blog se suma automáticamente. -->
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://joaquintorresperiodista.github.io/delarrecife/</loc>
-    <lastmod>2026-10-22</lastmod>
+    <loc>{{ '/' | absolute_url }}</loc>
+    <lastmod>2026-11-05</lastmod>
   </url>
+  <url>
+    <loc>{{ '/blog/' | absolute_url }}</loc>
+    <lastmod>{% if site.posts.size > 0 %}{{ site.posts.first.date | date: '%Y-%m-%d' }}{% else %}2026-11-05{% endif %}</lastmod>
+  </url>
+  {%- for post in site.posts %}
+  <url>
+    <loc>{{ post.url | absolute_url }}</loc>
+    <lastmod>{{ post.actualizado | default: post.date | date: '%Y-%m-%d' }}</lastmod>
+  </url>
+  {%- endfor %}
 </urlset>

@@ -1,0 +1,40 @@
+<a class="skip-link" href="#contenido">Saltar al contenido</a>
+
+<!-- Paleta de comandos: se abre con Ctrl+K / Cmd+K -->
+<div class="cmdk-overlay" id="cmdk-overlay">
+  <div class="cmdk-panel" role="dialog" aria-modal="true" aria-label="Buscador rápido">
+    <input type="text" id="cmdk-input" class="cmdk-input" placeholder="Buscar… (Proyectos, Servicios, Blog, Contacto)" autocomplete="off" aria-label="Buscar sección">
+    <ul class="cmdk-list">
+      <li><a class="cmdk-item" href="{{ '/#top' | relative_url }}">Inicio</a></li>
+      <li><a class="cmdk-item" href="{{ '/#proyectos' | relative_url }}">Proyectos</a></li>
+      <li><a class="cmdk-item" href="{{ '/#servicios' | relative_url }}">Servicios</a></li>
+      <li><a class="cmdk-item" href="{{ '/blog/' | relative_url }}">Blog</a></li>
+      <li><a class="cmdk-item" href="{{ '/#contacto' | relative_url }}">Contacto</a></li>
+      <li><a class="cmdk-item" href="https://wa.me/56988670277?text=Hola%20Joaqu%C3%ADn%2C%20quiero%20sacar%20a%20flote%20mi%20negocio" target="_blank" rel="noopener">WhatsApp <span class="hint">↗<span class="sr-only"> (abre en otra pestaña)</span></span></a></li>
+      <li><a class="cmdk-item" href="https://github.com/joaquintorresperiodista/delarrecife" target="_blank" rel="noopener">GitHub <span class="hint">↗<span class="sr-only"> (abre en otra pestaña)</span></span></a></li>
+    </ul>
+    <div class="cmdk-hint">↑ ↓ para moverte · Enter para abrir · Esc para cerrar</div>
+  </div>
+</div>
+
+<header class="site-nav" id="top">
+  <nav class="wrap nav-inner" aria-label="Principal">
+
+    <a href="{{ '/' | relative_url }}" class="nav-brand">Delarrecife</a>
+
+    <div class="nav-links" id="nav-links">
+      <a href="{{ '/#proyectos' | relative_url }}" class="nav-link">Proyectos</a>
+      <a href="{{ '/#servicios' | relative_url }}" class="nav-link">Servicios</a>
+      <a href="{{ '/blog/' | relative_url }}" class="nav-link"{% if page.url contains '/blog/' %} aria-current="page"{% endif %}>Blog</a>
+      <a href="{{ '/#contacto' | relative_url }}" class="nav-link">Contacto</a>
+      <a href="{{ '/#contacto' | relative_url }}" class="btn-brand-solid nav-cta">Hablemos</a>
+    </div>
+
+    <button type="button" class="nav-toggle" aria-expanded="false" aria-controls="nav-links" aria-label="Abrir menú">
+      <span class="nav-toggle-bar"></span>
+      <span class="nav-toggle-bar"></span>
+      <span class="nav-toggle-bar"></span>
+    </button>
+
+  </nav>
+</header>
