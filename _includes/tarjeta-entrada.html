@@ -1,0 +1,15 @@
+{%- assign post = include.post -%}
+{%- assign cat = site.data.categorias | where: "clave", post.categoria | first -%}
+<article class="post-card" data-categoria="{{ post.categoria }}">
+  <div class="post-card-thumb">
+    {%- if post.imagen %}
+    <img src="{{ post.imagen | relative_url }}" alt="" loading="lazy" decoding="async"{% if post.imagen_ancho %} width="{{ post.imagen_ancho }}" height="{{ post.imagen_alto }}"{% endif %}>
+    {%- endif %}
+  </div>
+  <div class="post-card-meta">
+    {%- if cat %}<span class="tag-label">{{ cat.nombre }}</span><span aria-hidden="true">·</span>{% endif %}
+    {% include fecha.html fecha=post.date %}
+  </div>
+  <h3><a class="post-card-link" href="{{ post.url | relative_url }}">{{ post.title }}</a></h3>
+  <p>{{ post.description | default: post.excerpt | strip_html | normalize_whitespace | truncate: 170 }}</p>
+</article>

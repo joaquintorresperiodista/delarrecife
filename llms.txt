@@ -1,3 +1,6 @@
+---
+layout: null
+---
 # Delarrecife
 
 > Consultora digital de Joaquín Ramón Torres Osorio en Puente Alto, Región Metropolitana de Santiago, Chile. Ayuda a pymes y emprendedores a "sacar a flote su negocio": desarrollo web, identidad visual, redes sociales y e-commerce.
@@ -16,6 +19,12 @@
 
 ## Fundador
 Joaquín Ramón Torres Osorio, periodista de la Universidad Diego Portales, con experiencia en redacción SEO y medios digitales.
+
+## Blog
+Artículos de Joaquín Torres sobre presencia digital para pymes: https://joaquintorresperiodista.github.io/delarrecife/blog/
+{%- for post in site.posts %}
+- {{ post.title }}: {{ post.description | default: post.excerpt | strip_html | normalize_whitespace | truncate: 160 }} {{ post.url | absolute_url }}
+{%- endfor %}
 
 ## Contacto
 - Sitio: https://joaquintorresperiodista.github.io/delarrecife/

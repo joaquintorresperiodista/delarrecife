@@ -278,4 +278,39 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
 
+  /* =========================
+     BLOG: FILTRO POR CATEGORÍA (/blog/)
+     Sin JS los botones quedan ocultos y se ven todas las entradas.
+     ========================= */
+
+  const blogFilters = document.querySelector(".blog-filters");
+
+  if (blogFilters) {
+
+    const filterButtons = blogFilters.querySelectorAll(".blog-filter");
+    const postCards = document.querySelectorAll(".blog-list .post-card");
+    const blogStatus = document.querySelector(".blog-status");
+
+    blogFilters.hidden = false;
+
+    function applyFilter(filter) {
+      let shown = 0;
+      postCards.forEach((card) => {
+        const match = filter === "todas" || card.dataset.categoria === filter;
+        card.hidden = !match;
+        if (match) shown++;
+      });
+      filterButtons.forEach((button) => {
+        button.setAttribute("aria-pressed", String(button.dataset.filtro === filter));
+      });
+      if (blogStatus) blogStatus.textContent = `${shown} ${shown === 1 ? "entrada" : "entradas"}`;
+    }
+
+    filterButtons.forEach((button) => {
+      button.addEventListener("click", () => applyFilter(button.dataset.filtro));
+    });
+
+  }
+
+
 });

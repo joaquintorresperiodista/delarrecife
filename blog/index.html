@@ -1,0 +1,41 @@
+---
+layout: default
+title: "Blog: ideas digitales para pymes"
+description: Ideas prácticas de desarrollo web, comunicación, redes sociales y e-commerce para pymes y emprendedores de Puente Alto y Santiago.
+---
+{%- comment -%}
+  LISTADO DEL BLOG (/blog/). Se arma solo con las entradas de la carpeta _posts/.
+  Para escribir una entrada nueva, mira COMO-ESCRIBIR-UNA-ENTRADA.md.
+{%- endcomment -%}
+<section class="wide-section blog-intro" aria-labelledby="blog-titulo">
+  <span class="wide-badge">Blog</span>
+  <h1 class="wide-title blog-title" id="blog-titulo">Ideas para sacar a flote tu negocio</h1>
+  <p class="blog-lead">{{ page.description }}</p>
+
+  {%- if site.posts.size > 0 %}
+  <div class="blog-filters" role="group" aria-label="Filtrar por categoría" hidden>
+    <button type="button" class="blog-filter" data-filtro="todas" aria-pressed="true">Todas</button>
+    {%- for cat in site.data.categorias %}
+    {%- assign cuantas = site.posts | where: "categoria", cat.clave | size %}
+    {%- if cuantas > 0 %}
+    <button type="button" class="blog-filter" data-filtro="{{ cat.clave }}" aria-pressed="false">{{ cat.nombre }} <span class="blog-filter-count">{{ cuantas }}</span></button>
+    {%- endif %}
+    {%- endfor %}
+  </div>
+  {%- endif %}
+</section>
+
+<section class="wide-section blog-list" aria-labelledby="blog-entradas-titulo">
+  <h2 class="sr-only" id="blog-entradas-titulo">Entradas</h2>
+  {%- if site.posts.size > 0 %}
+  <div class="posts-grid">
+    {%- for post in site.posts %}
+    {% include tarjeta-entrada.html post=post %}
+    {%- endfor %}
+  </div>
+  <p class="blog-status sr-only" role="status" aria-live="polite"></p>
+  {%- else %}
+  <p class="blog-empty">Muy pronto, las primeras entradas.</p>
+  {%- endif %}
+  <p class="blog-feed"><a href="{{ '/blog/feed.xml' | relative_url }}">Suscríbete por RSS</a></p>
+</section>
