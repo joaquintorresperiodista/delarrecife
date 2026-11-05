@@ -1,41 +1,39 @@
 ---
 layout: default
 title: Blog
-subtitulo: Ideas prácticas de desarrollo web, comunicación e e-commerce.
 description: Ideas prácticas de desarrollo web, comunicación, redes sociales y e-commerce para pymes y emprendedores de Puente Alto y Santiago.
 ---
 {%- comment -%}
   LISTADO DEL BLOG (/blog/). Se arma solo con las entradas de la carpeta _posts/.
+  La entrada más reciente va destacada (ancha); el resto, en grilla.
+  Los filtros por categoría aparecen solo cuando hay entradas de 2 o más categorías.
   Para escribir una entrada nueva, mira COMO-ESCRIBIR-UNA-ENTRADA.md.
 {%- endcomment -%}
-<section class="wide-section blog-intro" aria-labelledby="blog-titulo">
-  <h1 class="wide-title blog-title" id="blog-titulo">Blog</h1>
-  <p class="blog-lead">{{ page.subtitulo }}</p>
+{%- assign categorias_usadas = site.posts | map: "categoria" | uniq -%}
+<section class="wide-section blog-page" aria-labelledby="blog-titulo">
+  <div class="blog-head">
+    <h1 class="wide-title blog-title" id="blog-titulo">Blog</h1>
 
-  {%- if site.posts.size > 0 %}
-  <div class="blog-filters" role="group" aria-label="Filtrar por categoría" hidden>
-    <button type="button" class="blog-filter" data-filtro="todas" aria-pressed="true">Todas</button>
-    {%- for cat in site.data.categorias %}
-    {%- assign cuantas = site.posts | where: "categoria", cat.clave | size %}
-    {%- if cuantas > 0 %}
-    <button type="button" class="blog-filter" data-filtro="{{ cat.clave }}" aria-pressed="false">{{ cat.nombre }} <span class="blog-filter-count">{{ cuantas }}</span></button>
+    {%- if categorias_usadas.size > 1 %}
+    <div class="blog-filters" role="group" aria-label="Filtrar por categoría" hidden>
+      <button type="button" class="blog-filter" data-filtro="todas" aria-pressed="true">Todas</button>
+      {%- for cat in site.data.categorias %}
+      {%- if categorias_usadas contains cat.clave %}
+      <button type="button" class="blog-filter" data-filtro="{{ cat.clave }}" aria-pressed="false">{{ cat.nombre }}</button>
+      {%- endif %}
+      {%- endfor %}
+    </div>
     {%- endif %}
-    {%- endfor %}
   </div>
-  {%- endif %}
-</section>
 
-<section class="wide-section blog-list" aria-labelledby="blog-entradas-titulo">
-  <h2 class="sr-only" id="blog-entradas-titulo">Entradas</h2>
   {%- if site.posts.size > 0 %}
-  <div class="posts-grid">
+  <div class="posts-grid blog-list">
     {%- for post in site.posts %}
-    {% include tarjeta-entrada.html post=post %}
+    {% include tarjeta-entrada.html post=post destacada=forloop.first %}
     {%- endfor %}
   </div>
   <p class="blog-status sr-only" role="status" aria-live="polite"></p>
   {%- else %}
   <p class="blog-empty">Muy pronto, las primeras entradas.</p>
   {%- endif %}
-  <p class="blog-feed"><a href="{{ '/blog/feed.xml' | relative_url }}">Suscríbete por RSS</a></p>
 </section>
