@@ -1,6 +1,7 @@
 ---
 layout: default
-title: "Blog: ideas digitales para pymes"
+title: Blog
+subtitulo: Ideas prácticas de desarrollo web, comunicación e e-commerce.
 description: Ideas prácticas de desarrollo web, comunicación, redes sociales y e-commerce para pymes y emprendedores de Puente Alto y Santiago.
 ---
 {%- comment -%}
@@ -8,9 +9,8 @@ description: Ideas prácticas de desarrollo web, comunicación, redes sociales y
   Para escribir una entrada nueva, mira COMO-ESCRIBIR-UNA-ENTRADA.md.
 {%- endcomment -%}
 <section class="wide-section blog-intro" aria-labelledby="blog-titulo">
-  <span class="wide-badge">Blog</span>
-  <h1 class="wide-title blog-title" id="blog-titulo">Ideas para sacar a flote tu negocio</h1>
-  <p class="blog-lead">{{ page.description }}</p>
+  <h1 class="wide-title blog-title" id="blog-titulo">Blog</h1>
+  <p class="blog-lead">{{ page.subtitulo }}</p>
 
   {%- if site.posts.size > 0 %}
   <div class="blog-filters" role="group" aria-label="Filtrar por categoría" hidden>
